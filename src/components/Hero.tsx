@@ -6,7 +6,7 @@ import patternCircle from "../assets/images/pattern-circle.svg";
 
 export const Hero = () => {
   return (
-    <div className="text-center">
+    <section className="text-center mb-10 md:mb-13 lg:mb-18">
       <Header />
       <div className="mb-20 md:mb-15 md:grid md:grid-cols-[1fr_1fr_1fr_0.2fr_0.3fr_0.3fr_1.7fr] lg:wrapper lg:mb-26 lg:grid-cols-[1fr_1fr_1fr_0.5fr_0.3fr_0.3fr_1.7fr] lg:items-start">
         <div className="grid grid-cols-[1fr_minmax(173px,1fr)_1fr] grid-rows-1 relative -z-1 overflow-hidden -mt-[96px] mb-10 justify-center md:-mt-[155px] md:mb-0 md:justify-end md:[grid-column:5/8] md:[grid-row:1/2] lg:grid-cols-[minmax(173px,1fr)_1fr] lg:-mt-[188px] lg:md:[grid-column:5/8] lg:overflow-visible">
@@ -39,13 +39,13 @@ export const Hero = () => {
           </p>
           <a
             href="#"
-            className="m-auto block w-fit text-left uppercase font-black leading-[26px] tracking-[3.29px] no-underline custom-border-bottom md:ml-[initial]"
+            className="m-auto block w-fit text-left custom-link custom-border-bottom md:ml-[initial]"
           >
             Contact Me
           </a>
         </div>
       </div>
       <div className="wrapper border-b-1 border-alt"></div>
-    </div>
+    </section>
   );
 };
