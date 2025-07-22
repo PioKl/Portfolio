@@ -29,6 +29,13 @@
   .custom-border-bottom {
     @apply border-b-2 pb-2 border-outline;
   }
+  .custom-link {
+    @apply uppercase 
+    font-black 
+    leading-[26px] 
+    tracking-[3.29px] 
+    no-underline;
+  }
 }
 
 @utility wrapper {
@@ -47,9 +54,29 @@
 
 @theme {
   --color-main: var(--white);
-  --color-alt: var(--gray);
+  --color-alt: var(--grey);
   --color-outline: var(--green);
   --color-interactive: var(--green);
+
+  --text-heading-xl: var(--heading-XL-font-size);
+  --tracking-heading-xl: var(--heading-XL-letter-spacing);
+  --leading-heading-xl: var(--heading-XL-line-height);
+  --font-weight-heading-xl: var(--heading-XL-font-weight);
+
+  --text-heading-l: var(--heading-l-font-size);
+  --tracking-heading-l: var(--heading-l-letter-spacing);
+  --leading-heading-l: var(--heading-l-line-height);
+  --font-weight-heading-l: var(--heading-l-font-weight);
+
+  --text-heading-m: var(--heading-m-font-size);
+  --tracking-heading-m: var(--heading-m-letter-spacing);
+  --leading-heading-m: var(--heading-m-line-height);
+  --font-weight-heading-m: var(--heading-m-font-weight);
+
+  --text-body: var(--body-font-size);
+  --tracking-body: var(--body-letter-spacing);
+  --leading-body: var(--body-line-height);
+  --font-weight-body: var(--body-font-weight);
 }
 
 :root {
