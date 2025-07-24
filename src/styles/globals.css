@@ -9,7 +9,8 @@
     @apply appearance-none bg-transparent border-0 outline-none;
   }
 
-  a {
+  a,
+  button {
     @apply relative inline-block 
     bg-[linear-gradient(to_right,var(--color-interactive),var(--color-interactive)_50%,var(--color-main)_50%)]
     bg-clip-text 
@@ -24,7 +25,8 @@
     decoration-outline 
     underline-offset-8
     md:underline-offset-14
-    lg:underline-offset-18;
+    lg:underline-offset-18
+    cursor-pointer;
   }
   .custom-border-bottom {
     @apply border-b-2 pb-2 border-outline;
@@ -57,6 +59,7 @@
   --color-alt: var(--grey);
   --color-outline: var(--green);
   --color-interactive: var(--green);
+  --color-dark-grey: var(--dark-grey);
 
   --text-heading-xl: var(--heading-XL-font-size);
   --tracking-heading-xl: var(--heading-XL-letter-spacing);
