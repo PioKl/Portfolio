@@ -8,9 +8,9 @@ export default function Header() {
         className="relative grid gap-5 h-auto pt-5 text-center m-auto md:flex md:flex-row md:justify-between md:wrapper md:pt-7 md:mb-23 lg:mb-32"
         role="banner"
       >
-        <h1 className="font-bold text-white text-2xl tracking-[-0.33px] leading-8 whitespace-nowrap md:text-[32px] md:tracking-[-0.44px] md:leading-8">
+        <span className="font-bold text-white text-2xl tracking-[-0.33px] leading-8 whitespace-nowrap md:text-[32px] md:tracking-[-0.44px] md:leading-8">
           adamkeyes
-        </h1>
+        </span>
 
         <nav className="lg:pr-7.5">
           <ul className="flex gap-6 items-center justify-center">
@@ -20,7 +20,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={IconGithub} alt="" />
+                <img src={IconGithub} alt="GitHub" />
               </a>
             </li>
             <li>
