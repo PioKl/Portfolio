@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
 @layer base {
   button,
   input,
@@ -28,16 +36,6 @@
     lg:underline-offset-18
     cursor-pointer;
   }
-  .custom-border-bottom {
-    @apply border-b-2 pb-2 border-outline;
-  }
-  .custom-link {
-    @apply uppercase 
-    font-black 
-    leading-[26px] 
-    tracking-[3.29px] 
-    no-underline;
-  }
 }
 
 @utility wrapper {
@@ -53,6 +51,20 @@
     all: unset;
   }
 }
+@layer utilities {
+  .custom-border-bottom {
+    @apply border-b-2 pb-2 border-outline;
+  }
+  .custom-link {
+    @apply uppercase font-black leading-[26px] tracking-[3.29px] no-underline;
+  }
+  .error-icon {
+    @apply before:content-[""] before:w-6 before:h-6 before:absolute before:right-0 before:bg-[url('../assets/icons/icon-error.svg')] before:bg-cover before:bg-center;
+  }
+  .error-message {
+    @apply inline-block w-full text-end text-xs tracking-[-0.17px] leading-4 text-error;
+  }
+}
 
 @theme {
   --color-main: var(--white);
@@ -60,6 +72,7 @@
   --color-outline: var(--green);
   --color-interactive: var(--green);
   --color-dark-grey: var(--dark-grey);
+  --color-error: var(--error);
 
   --text-heading-xl: var(--heading-XL-font-size);
   --tracking-heading-xl: var(--heading-XL-letter-spacing);
@@ -114,6 +127,7 @@
   --heading-XL-letter-spacing: -2.5px;
   --heading-XL-line-height: 88px;
   --white: rgba(255, 255, 255, 1);
+  --error: #ff6f5b;
 }
 
 body {
