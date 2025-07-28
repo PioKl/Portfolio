@@ -30,8 +30,8 @@ const Projects = () => {
         </a>
       </div>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-6 lg:gap-7.5">
-        {projects.map((project) => (
-          <div className="grid gap-5">
+        {projects.map((project, id) => (
+          <div key={id} className="grid gap-5">
             <div tabIndex={0} className="relative group">
               <picture>
                 <source
@@ -65,8 +65,10 @@ const Projects = () => {
                 {project.name}
               </h2>
               <div className="flex gap-4">
-                {project.skills.map((skill) => (
-                  <span className="text-alt">{skill}</span>
+                {project.skills.map((skill, id) => (
+                  <span key={id} className="text-alt">
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
