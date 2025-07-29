@@ -1,6 +1,6 @@
-import IconGithub from "../../assets/icons/icon-github.svg";
-import IconTwitter from "../../assets/icons/icon-twitter.svg";
-import patternRings from "../../assets/images/pattern-rings.svg";
+import IconGithub from "@/assets/icons/icon-github.svg?react";
+import patternRings from "@/assets/images/pattern-rings.svg";
+
 export default function Header() {
   return (
     <>
@@ -12,24 +12,16 @@ export default function Header() {
           adamkeyes
         </span>
 
-        <nav className="lg:pr-7.5">
+        <nav className="grid lg:pr-7.5">
           <ul className="flex gap-6 items-center justify-center">
-            <li>
+            <li className="grid">
               <a
                 href="https://www.facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="group"
               >
-                <img src={IconGithub} alt="GitHub" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={IconTwitter} alt="" />
+                <IconGithub className="w-[25px] h-[24px] group-hover:[&>path]:fill-interactive group-focus-within:[&>path]:fill-interactive [&>path]:transition-colors [&>path]:duration-150" />
               </a>
             </li>
           </ul>
