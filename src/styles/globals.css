@@ -14,7 +14,13 @@ input[data-autocompleted] {
   input,
   select,
   textarea {
-    @apply appearance-none bg-transparent border-0 outline-none;
+    @apply appearance-none bg-transparent border-0;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply outline-none;
   }
 
   a,
@@ -93,6 +99,23 @@ input[data-autocompleted] {
   --tracking-body: var(--body-letter-spacing);
   --leading-body: var(--body-line-height);
   --font-weight-body: var(--body-font-weight);
+
+  --animate-message: opacityAnimation 6s ease-out forwards;
+
+  @keyframes opacityAnimation {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }
 
 :root {
