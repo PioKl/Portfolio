@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 import patternRings from "../assets/images/pattern-rings.svg";
 
 type FormValues = {
@@ -17,13 +19,54 @@ const Contact = () => {
   } = useForm<FormValues>({
     mode: "onChange",
   });
+  const [messageSent, setMessageSent] = useState(false);
+  const [messageSentError, setMessageSentError] = useState(false);
+
   const onSubmit = (data: FormValues) => {
-    console.log("Sending:", data);
+    emailjs
+      .send(
+        `${import.meta.env.VITE_EMAILJS_SERVICE_ID}`,
+        `${import.meta.env.VITE_EMAILJS_TEMPLATE_ID}`,
+        data,
+        `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`
+      )
+      .then(
+        (response) => {
+          if (import.meta.env.DEV) {
+            console.log("SUCCESS!", response.status);
+          }
+          setMessageSent(true);
+          (document.activeElement as HTMLElement)?.blur(); //usunięcie focusa z aktywnego elementu na stronie, czyli z przucisku Send Message
+          setTimeout(() => setMessageSent(false), 4000);
+        },
+        (error) => {
+          if (import.meta.env.DEV) {
+            console.log("Status:", error.status);
+          }
+          setMessageSentError(true);
+          (document.activeElement as HTMLElement)?.blur();
+          setTimeout(() => setMessageSentError(false), 4000);
+        }
+      );
     reset();
   };
 
   return (
-    <section className="pt-15 pb-21.5 bg-dark-grey md:pb-23">
+    <section className="relative pt-15 pb-21.5 bg-dark-grey md:pb-23">
+      {messageSent && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 bg-outline p-10 rounded-md animate-[var(--animate-message)]">
+          <span className="uppercase font-black leading-[26px] tracking-[3.29px]">
+            Message Sent
+          </span>
+        </div>
+      )}
+      {messageSentError && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 bg-red-600 p-10 rounded-md animate-[var(--animate-message)]">
+          <span className="uppercase font-black leading-[26px] tracking-[3.29px]">
+            Failed To Sent
+          </span>
+        </div>
+      )}
       <div className="relative wrapper lg:grid lg:grid-cols-2">
         <div className="mb-12.5 md:max-w-[445px] md:mx-auto">
           <h1 className="mb-5 text-center font-bold text-[40px] tracking-[-1.14px] leading-10 md:text-7xl md:tracking-[-2.05px] md:leading-[72px] lg:mb-9 lg:text-left lg:text-heading-xl lg:tracking-heading-xl lg:leading-heading-xl">
@@ -115,7 +158,7 @@ const Contact = () => {
                   className={`border-b-1 mb-1 ${
                     errors.message
                       ? "border-error"
-                      : watch("email")
+                      : watch("message")
                       ? "border-outline"
                       : "border-main"
                   }`}
