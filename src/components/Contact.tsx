@@ -54,14 +54,14 @@ const Contact = () => {
   return (
     <section className="relative pt-15 pb-21.5 bg-dark-grey md:pb-23">
       {messageSent && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 bg-outline p-10 rounded-md animate-[var(--animate-message)]">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 text-center bg-outline p-10 rounded-md animate-[var(--animate-message)]">
           <span className="uppercase font-black leading-[26px] tracking-[3.29px]">
             Message Sent
           </span>
         </div>
       )}
       {messageSentError && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 bg-red-600 p-10 rounded-md animate-[var(--animate-message)]">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1 text-center bg-red-600 p-10 rounded-md animate-[var(--animate-message)]">
           <span className="uppercase font-black leading-[26px] tracking-[3.29px]">
             Failed To Sent
           </span>
