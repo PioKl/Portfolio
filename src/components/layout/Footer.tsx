@@ -12,7 +12,7 @@ const Footer = () => {
           <ul className="flex gap-6 items-center justify-center">
             <li className="grid">
               <a
-                href="https://www.github.com/"
+                href="https://github.com/PioKl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
