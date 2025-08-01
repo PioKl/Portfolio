@@ -38,7 +38,7 @@ export const Hero = () => {
             accessible web apps that users love.
           </p>
           <a
-            href="#"
+            href="#contact"
             className="m-auto block w-fit text-left custom-link custom-border-bottom md:ml-[initial]"
           >
             Contact Me
