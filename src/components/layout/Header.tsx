@@ -9,7 +9,7 @@ export default function Header() {
         role="banner"
       >
         <span className="font-bold text-white text-2xl tracking-[-0.33px] leading-8 whitespace-nowrap md:text-[32px] md:tracking-[-0.44px] md:leading-8">
-          adamkeyes
+          piokl
         </span>
 
         <nav className="grid lg:pr-7.5">
