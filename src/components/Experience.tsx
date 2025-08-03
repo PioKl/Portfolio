@@ -3,10 +3,13 @@ import patternRings from "../assets/images/pattern-rings.svg";
 const skills = [
   { skill: "HTML", exp: "4 Years Experience" },
   { skill: "CSS", exp: "4 Years Experience" },
-  { skill: "Javscript", exp: "4 Years Experience" },
-  { skill: "Accessibility", exp: "4 Years Experience" },
-  { skill: "React", exp: "4 Years Experience" },
   { skill: "Sass", exp: "4 Years Experience" },
+  { skill: "Javscript", exp: "4 Years Experience" },
+  { skill: "Typescript", exp: "2 Years Experience" },
+  { skill: "React", exp: "4 Years Experience" },
+  { skill: "Nextjs", exp: "2 Years Experience" },
+  { skill: "Figma", exp: "3 Years Experience" },
+  { skill: "Accessibility", exp: "4 Years Experience" },
 ];
 
 const Experience = () => {
