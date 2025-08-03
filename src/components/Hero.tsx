@@ -1,8 +1,6 @@
 import Header from "./layout/Header";
-import profileDesktop from "../assets/images/image-profile-desktop.webp";
-import profileTablet from "../assets/images/image-profile-tablet.webp";
-import profileMobile from "../assets/images/image-profile-mobile.webp";
 import patternCircle from "../assets/images/pattern-circle.svg";
+import profile from "../assets/images/profile.webp";
 
 export const Hero = () => {
   return (
@@ -15,13 +13,14 @@ export const Hero = () => {
             alt=""
             className="absolute bottom-0.5 right-[-64.5px] md:bottom-[3px] lg:bottom-[10%] lg:left-[-64.5px]"
           />
+          {/* source zostawione gdyby w przyszłości zdjęcia były w różnych rozdzielczościachm bądź zupełnie innne dla różnych mq */}
           <picture className="col-start-2 col-end-3 md:col-start-1 md:col-end-4 md:ml-auto">
-            <source media="(min-width: 1024px)" srcSet={profileDesktop} />
-            <source media="(min-width: 768px)" srcSet={profileTablet} />
+            <source media="(min-width: 1024px)" srcSet={profile} />
+            <source media="(min-width: 768px)" srcSet={profile} />
 
             <img
-              className="object-cover md:h-[600px] md:w-auto lg:h-[720px]"
-              src={profileMobile}
+              className="object-cover pt-37.5 bg-dark-grey md:h-[600px] md:pt-0 md:w-auto lg:h-[720px]"
+              src={profile}
               alt="profile image"
             />
           </picture>
@@ -31,11 +30,19 @@ export const Hero = () => {
           <h1 className="mb-0 text-center text-[40px] font-bold leading-10 tracking-[-1.14px] md:mb-15 md:text-left md:text-7xl md:leading-[72px] md:tracking-[-2.05px] lg:text-[length:var(--heading-XL-font-size)] lg:leading-[var(--heading-XL-line-height)] lg:tracking-[var(--heading-XL-letter-spacing)] lg:mb-11">
             <span className="md:block lg:inline">Nice to </span>
             <span className="md:block lg:inline">meet you! I’m </span>
-            <a href="#">Adam Keyes</a>.
+            <a
+              href="https://github.com/PioKl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Piotr
+            </a>
+            .
           </h1>
           <p className="leading-[28px] md:mb-13 md:text-left md:max-w-[440px] lg:mb-16">
-            Based in the UK, I’m a front-end developer passionate about building
-            accessible web apps that users love.
+            Based in the Poland, I’m a front-end developer who enjoys creating
+            projects using JavaScript and React, as well as various other
+            technologies.
           </p>
           <a
             href="#contact"
