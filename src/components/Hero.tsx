@@ -13,7 +13,7 @@ export const Hero = () => {
             alt=""
             className="absolute bottom-0.5 right-[-64.5px] md:bottom-[3px] lg:bottom-[10%] lg:left-[-64.5px]"
           />
-          {/* source zostawione gdyby w przyszłości zdjęcia były w różnych rozdzielczościachm bądź zupełnie innne dla różnych mq */}
+          {/* source zostawione gdyby w przyszłości zdjęcia były w różnych rozdzielczościach bądź zupełnie innne dla różnych mq */}
           <picture className="col-start-2 col-end-3 md:col-start-1 md:col-end-4 md:ml-auto">
             <source media="(min-width: 1024px)" srcSet={profile} />
             <source media="(min-width: 768px)" srcSet={profile} />

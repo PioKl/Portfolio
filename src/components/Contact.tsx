@@ -36,7 +36,7 @@ const Contact = () => {
             console.log("SUCCESS!", response.status);
           }
           setMessageSent(true);
-          (document.activeElement as HTMLElement)?.blur(); //usunięcie focusa z aktywnego elementu na stronie, czyli z przucisku Send Message
+          (document.activeElement as HTMLElement)?.blur(); //usunięcie focusa z aktywnego elementu na stronie, czyli z przycisku Send Message
           setTimeout(() => setMessageSent(false), 4000);
         },
         (error) => {
